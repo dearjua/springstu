@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="user" class="com.dearjua.spring6.User">
+    <property name="name" value="李军华"></property>
+    <property name="age" value="23"></property>
+    <property name="id" value="20220321"></property>
+    <property name="sex" value="男"></property>
+</bean>
+    <bean id="user1" class="com.dearjua.spring6.User">
+        <constructor-arg value="202020"></constructor-arg>
+        <constructor-arg value="jua"></constructor-arg>
+        <constructor-arg value="23"></constructor-arg>
+        <constructor-arg value="man"></constructor-arg>
+    </bean>
+
+    <bean id="student" class="com.dearjua.spring6.Student">
+        <property name="className" value="富士康"></property>
+        <property name="major" value="IT"></property>
+    </bean>
+    <bean id="user3" class="com.dearjua.spring6.User">
+        <property name="name" value="李华"></property>
+        <property name="age" value="24"></property>
+        <property name="id" value="2022045"></property>
+        <property name="sex" value="男"></property>
+        <property name="stu" ref="student"></property>
+    </bean>
+
+    <!--内部bean-->
+    <bean id="user4" class="com.dearjua.spring6.User">
+        <property name="name" value="李华"></property>
+        <property name="age" value="24"></property>
+        <property name="id" value="2022045"></property>
+        <property name="sex" value="男"></property>
+        <property name="stu" >
+            <bean id="className" class="com.dearjua.spring6.Student">
+                <property name="major" value="数学"></property>
+                <property name="className" value="进步"></property>
+            </bean>
+        </property>
+    </bean>
+</beans>
