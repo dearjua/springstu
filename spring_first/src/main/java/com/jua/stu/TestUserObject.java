@@ -14,6 +14,6 @@ public class TestUserObject {
         //获取创建的对象
         User u = (User) context.getBean("user");
         u.add();
-        logger.info("执行成功");
+        logger.info("###执行成功");
     }
 }
