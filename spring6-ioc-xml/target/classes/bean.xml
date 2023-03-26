@@ -2,19 +2,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<<<<<<< HEAD
 <bean id="user" class="com.dearjua.spring6.test.User">
+=======
+<bean id="user" class="com.dearjua.spring6.User">
+>>>>>>> origin/master
     <property name="name" value="李军华"></property>
     <property name="age" value="23"></property>
     <property name="id" value="20220321"></property>
     <property name="sex" value="男"></property>
 </bean>
+<<<<<<< HEAD
     <bean id="user1" class="com.dearjua.spring6.test.User">
+=======
+    <bean id="user1" class="com.dearjua.spring6.User">
+>>>>>>> origin/master
         <constructor-arg value="202020"></constructor-arg>
         <constructor-arg value="jua"></constructor-arg>
         <constructor-arg value="23"></constructor-arg>
         <constructor-arg value="man"></constructor-arg>
     </bean>
 
+<<<<<<< HEAD
     <bean id="student" class="com.dearjua.spring6.test.Student">
         <property name="className" value="富士康"></property>
         <property name="major" value="IT"></property>
@@ -25,11 +34,19 @@
         <property name="major" value="AI"></property>
     </bean>
     <bean id="user3" class="com.dearjua.spring6.test.User">
+=======
+    <bean id="student" class="com.dearjua.spring6.Student">
+        <property name="className" value="富士康"></property>
+        <property name="major" value="IT"></property>
+    </bean>
+    <bean id="user3" class="com.dearjua.spring6.User">
+>>>>>>> origin/master
         <property name="name" value="李华"></property>
         <property name="age" value="24"></property>
         <property name="id" value="2022045"></property>
         <property name="sex" value="男"></property>
         <property name="stu" ref="student"></property>
+<<<<<<< HEAD
         <property name="hobbies" >
             <array>
                 <value>打球</value>
@@ -40,17 +57,28 @@
 
     <!--内部bean-->
     <bean id="user4" class="com.dearjua.spring6.test.User">
+=======
+    </bean>
+
+    <!--内部bean-->
+    <bean id="user4" class="com.dearjua.spring6.User">
+>>>>>>> origin/master
         <property name="name" value="李华"></property>
         <property name="age" value="24"></property>
         <property name="id" value="2022045"></property>
         <property name="sex" value="男"></property>
         <property name="stu" >
+<<<<<<< HEAD
             <bean id="className" class="com.dearjua.spring6.test.Student">
+=======
+            <bean id="className" class="com.dearjua.spring6.Student">
+>>>>>>> origin/master
                 <property name="major" value="数学"></property>
                 <property name="className" value="进步"></property>
             </bean>
         </property>
     </bean>
+<<<<<<< HEAD
 
     <bean id="clazz" class="com.dearjua.spring6.test.Clazz">
         <property name="clazzName" value="39_forever"></property>
@@ -93,4 +121,6 @@
             </map>
         </property>
     </bean>
+=======
+>>>>>>> origin/master
 </beans>
