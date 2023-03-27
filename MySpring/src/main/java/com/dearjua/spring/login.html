@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <input type="button" value="Login" onclick="login()">
+</form>
+
+<script>
+  function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // 在这里进行用户名和密码的验证，这里仅作示例，直接跳转到博客页面
+    if (username === "admin" && password === "password") {
+      window.location.href = "MyBlog.html";
+    } else {
+      alert("Invalid username or password");
+    }
+  }
+</script>
+</body>
+</html>
