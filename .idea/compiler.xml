@@ -7,9 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_first" />
-        <module name="spring-ioc-annotation" />
         <module name="spring6-ioc-xml" />
+        <module name="MySpring" />
+        <module name="spring-ioc-annotation" />
+        <module name="spring6-jdbc-temp" />
+        <module name="spring6-aop" />
+        <module name="Spring6-aop-proxy" />
+        <module name="spring6-JUnit4" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-jdbc-tx" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
