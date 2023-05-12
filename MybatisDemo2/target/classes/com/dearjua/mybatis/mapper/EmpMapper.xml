@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dearjua.mybatis.mapper.EmpMapper">
+
+    <resultMap id="empResultMap" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+    </resultMap>
+
+    <select id="getAllEmp" resultMap="empResultMap">
+        select * from t_emp
+    </select>
+    <!--<select id="getAllEmp" resultType="Emp">
+        select * from t_emp
+    </select>-->
+    
+    <!--解决多对一的映射-->
+    <resultMap id="empAndDeptResultMapOne" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <!--<result property="dept.did" column="did"></result>
+        <result property="dept.deptName" column="dept_name"></result>-->
+        <association property="dept" javaType="Dept">
+            <id property="did" column="did"></id>
+            <result property="deptName" column="dept_name"></result>
+        </association>
+    </resultMap>
+
+    <!--Emp getEmpByStep(@Param("eid") Integer eid);-->
+    <resultMap id="getDeptByStep2" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <!--<result property="dept.did" column="did"></result>
+        <result property="dept.deptName" column="dept_name"></result>-->
+        <association property="dept"
+                     select="com.dearjua.mybatis.mapper.DeptMapper.getDeptByStep2"
+                     column="did">
+        </association>
+    </resultMap>
+    <select id="getEmpByStep" resultMap="getDeptByStep2">
+        select * from t_emp where eid = #{eid}
+    </select>
+    <select id="getEmpById" resultMap="empAndDeptResultMapOne">
+        SELECT * FROM t_emp LEFT JOIN t_dept ON t_emp.did = t_dept.did WHERE t_emp.eid = #{eid}
+    </select>
+
+    <select id="GetMepByDid" resultType="Emp">
+        select * from t_emp where did = #{did}
+    </select>
+
+    <!--List<Emp> getEmpByDynamicSql(Emp emp)-->
+    <select id="getEmpByDynamicSql" resultType="Emp">
+        select * from t_emp
+            /*
+            当where 标签中有内容时，会自动生产where关键字，并且将内容前多余的and或or去掉
+            不能将其中内容后面多余的and或or去掉
+            */
+        <!--<where>
+            <if test="empName != null and empName != ''">
+                 emp_name = #{empName}
+            </if>
+            <if test="age != null and age != ''">
+                and age = #{age}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+        </where>-->
+        <trim prefix="where" suffixOverrides="and|or">
+            <if test="empName != null and empName != ''">
+                emp_name = #{empName} and
+            </if>
+            <if test="age != null and age != ''">
+                 age = #{age} and
+            </if>
+            <if test="sex != null and sex != ''">
+                 sex = #{sex} and
+            </if>
+            <if test="email != null and sex != ''">
+                email = #{email}
+            </if>
+        </trim>
+    </select>
+
+    <!--List<Emp> getEmpByChoose(Emp emp);-->
+
+</mapper>

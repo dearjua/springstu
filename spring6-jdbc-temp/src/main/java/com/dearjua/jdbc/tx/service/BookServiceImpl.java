@@ -3,14 +3,16 @@ package com.dearjua.jdbc.tx.service;
 import com.dearjua.jdbc.tx.dao.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Repository
+@Service
+
 public class BookServiceImpl implements BookService{
 
     @Autowired
     private BookDao bookDao;
-    @Transactional
+    @Transactional()
     @Override
     public void BuyBook(Integer id, Integer bookId,Integer bookNum) {
 

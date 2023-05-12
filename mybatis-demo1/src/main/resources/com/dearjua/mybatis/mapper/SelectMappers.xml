@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+            <!DOCTYPE mapper
+                    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.dearjua.mybatis.mapper.SelectMappers">
+
+    <select id="GetUserById" resultType="User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <!--int getCount();-->
+    <select id="getCount" resultType="_integer">
+        select count(*) from t_user
+    </select>
+
+    <!--Map<String,Object> getUserByIdToMap(@Param("id") Integer id);-->
+    <select id="getUserByIdToMap" resultType="map">
+        select * from t_user where id = #{id}
+    </select>
+
+    <select id="getAllUser" resultType="map">
+        select * from t_user
+    </select>
+
+    <select id="mohu" resultType="User">
+        select * from t_user where username like "%"#{mohu}"%"
+    </select>
+
+    <select id="getAllUsers" resultType="User">
+        select * from ${tablename};
+    </select>
+
+    <insert id="InsertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user values(null, #{username}, #{password}, #{age}, #{sex})
+    </insert>
+</mapper>

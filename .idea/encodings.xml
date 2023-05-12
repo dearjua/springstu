@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/MyBatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyBatis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MySpring/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MySpring/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MybatisDemo2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MybatisDemo2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MybatisDemo2/src/test/java/ResultMapTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC_stu/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC_stu/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javaWeb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javaWeb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/dearjua/mybatis/test/ParameterMapperTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo1/src/test/java/com/dearjua/mybatis/test/SelectMapperTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-ioc-annotation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-ioc-annotation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-JUnit4/src/main/java" charset="UTF-8" />

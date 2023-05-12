@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dearjua.mybatis.mapper.ParameterMapper">
+
+    <!--List<User>  getAllUser();-->
+    <select id="getAllUser" resultType="User">
+        select * from t_user;
+    </select>
+
+    <!--
+    1.mapper接口方法的参数为单个字面量类型
+    可以通过${}和#{}以任意的名称获取参数值，但是需要注意${}的单引号问题
+    -->
+    <select id="GetUserByUsername" resultType="User">
+        <!--select * from t_user where username = #{username};-->
+        select * from t_user where username = '${username}';
+    </select>
+    <!--
+        2.mapper接口方法的参数为多个字面量类型
+        参数会被放在一个map集合中，以两种方式进行存储
+        a>以arg0,arg1为键，以参数为值
+        b>以param1,param2为键，以参数为值
+        可以通过${}和#{}以任意的名称获取参数值，但是需要注意${}的单引号问题
+        -->
+    <select id="CheckLogin" resultType="User">
+        select * from t_user where username = #{arg0} and password = #{arg1};
+    </select>
+
+    <!--
+    3.mapper接口的参数有多个时，可以将参数放在一个map接口中
+    -->
+    <select id="CheckLoginByMap" resultType="User">
+        select * from t_user where username = #{username} and password = #{password};
+    </select>
+
+    <!--int  InsertUser(User user);-->
+    <insert id="InsertUser">
+        insert into t_user values(null,#{username},#{password},#{age},#{sex});
+    </insert>
+</mapper>
